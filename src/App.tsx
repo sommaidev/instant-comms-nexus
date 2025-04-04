@@ -24,34 +24,36 @@ import NotFound from "./pages/NotFound";
 // Create the query client
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <AuthProvider>
-          <SocketProvider>
-            <UserProvider>
-              <ChannelProvider>
-                <MessageProvider>
-                  <Routes>
-                    <Route path="/" element={<Index />} />
-                    <Route path="/login" element={<LoginPage />} />
-                    <Route path="/register" element={<RegisterPage />} />
-                    <Route path="/chat/*" element={<ChatPage />} />
-                    <Route path="/profile" element={<ProfilePage />} />
-                    <Route path="/settings" element={<SettingsPage />} />
-                    <Route path="*" element={<NotFound />} />
-                  </Routes>
-                </MessageProvider>
-              </ChannelProvider>
-            </UserProvider>
-          </SocketProvider>
-        </AuthProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <AuthProvider>
+            <SocketProvider>
+              <UserProvider>
+                <ChannelProvider>
+                  <MessageProvider>
+                    <Routes>
+                      <Route path="/" element={<Index />} />
+                      <Route path="/login" element={<LoginPage />} />
+                      <Route path="/register" element={<RegisterPage />} />
+                      <Route path="/chat/*" element={<ChatPage />} />
+                      <Route path="/profile" element={<ProfilePage />} />
+                      <Route path="/settings" element={<SettingsPage />} />
+                      <Route path="*" element={<NotFound />} />
+                    </Routes>
+                  </MessageProvider>
+                </ChannelProvider>
+              </UserProvider>
+            </SocketProvider>
+          </AuthProvider>
+        </TooltipProvider>
       </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+    </QueryClientProvider>
+  );
+};
 
 export default App;

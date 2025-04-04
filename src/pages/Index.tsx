@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
-import { LogIn, UserPlus, MessageSquare, Users, Zap } from "lucide-react";
+import { LogIn, UserPlus, MessageSquare, Users, Zap, Hash } from "lucide-react";
 
 const Index = () => {
   const { isAuthenticated, loading } = useAuth();
