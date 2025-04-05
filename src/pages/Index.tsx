@@ -1,9 +1,9 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import { LogIn, UserPlus, MessageSquare, Users, Zap, Hash } from "lucide-react";
+import { EnvironmentBadge } from "@/components/ui/environment-badge";
 
 const Index = () => {
   const { isAuthenticated, loading } = useAuth();
@@ -23,6 +23,7 @@ const Index = () => {
         <div className="flex items-center space-x-2">
           <MessageSquare className="h-8 w-8 text-primary" />
           <span className="font-bold text-xl">Instant Comms Nexus</span>
+          <EnvironmentBadge />
         </div>
         <div className="space-x-2">
           {isAuthenticated ? (
